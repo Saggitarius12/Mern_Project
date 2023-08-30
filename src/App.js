@@ -1,5 +1,10 @@
 import './App.css';
 import Home from "./screens/Home.js"
+import Signup from "./screens/Signup.js"
+import Login from "./screens/Login.js"
+import RedContext from "./components/RedContext.js"
+import MyOrders from "./screens/MyOrders.js"
+
 
 
 import{
@@ -16,15 +21,19 @@ import "../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js";
 
 function App() {
   return (
+
+    <RedContext>
     <Router>
     <div>
       <Routes>
         <Route exact path="/" element = {<Home/>} />
-        <Route exact path="/login" element={<login/>} />
+        <Route exact path="/Login" element={<Login/>} />
         <Route exact path="/CreateUser" element = {<Signup/>}/>
+        <Route exact path="/myOrder" element={<MyOrders/>}/>
         </Routes>
     </div>
-    </Router>    
+    </Router> 
+    </RedContext>   
   );
 }
 
